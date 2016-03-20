@@ -14,6 +14,7 @@
 		CA8FDF761C9B788100D6195B /* CreditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8FDF751C9B788100D6195B /* CreditCardViewController.swift */; };
 		CA8FDF781C9B933400D6195B /* PaymentMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8FDF771C9B933400D6195B /* PaymentMethod.swift */; };
 		CA8FDF971C9B999700D6195B /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = CA8FDF841C9B978F00D6195B /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CA8FDFA01C9F073400D6195B /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8FDF9F1C9F073400D6195B /* ApiManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		CA8FDF751C9B788100D6195B /* CreditCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardViewController.swift; sourceTree = "<group>"; };
 		CA8FDF771C9B933400D6195B /* PaymentMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentMethod.swift; sourceTree = "<group>"; };
 		CA8FDF791C9B978E00D6195B /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = ../Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
+		CA8FDF9F1C9F073400D6195B /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				CA8FDF6F1C9B61C500D6195B /* Info.plist */,
 				CA8FDF751C9B788100D6195B /* CreditCardViewController.swift */,
 				CA8FDF771C9B933400D6195B /* PaymentMethod.swift */,
+				CA8FDF9F1C9F073400D6195B /* ApiManager.swift */,
 			);
 			path = CreditCard;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA8FDFA01C9F073400D6195B /* ApiManager.swift in Sources */,
 				CA8FDF781C9B933400D6195B /* PaymentMethod.swift in Sources */,
 				CA8FDF641C9B61C500D6195B /* AppDelegate.swift in Sources */,
 				CA8FDF761C9B788100D6195B /* CreditCardViewController.swift in Sources */,
