@@ -24,8 +24,8 @@ class CreditCardViewController: UITableViewController {
             var givenCreditCards:Array<String> = []
             
             if (paymentMethods.count == 0){
-                // TODO Warning log
-                print("There is no payment methods available.")
+                // TODO Warning log.
+                self.displayAlert()
             }
             
             //TODO this paymentMethods can be automatically parsed using some FWK but i think is not necessary in this case
@@ -53,5 +53,14 @@ class CreditCardViewController: UITableViewController {
            cell.textLabel?.text = card
         }
         return cell
+    }
+    
+    func displayAlert(){
+        let alert = UIAlertController(title: "Error", message: "There is no payment methods available.", preferredStyle: UIAlertControllerStyle.Alert)
+        let okButton = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil)
+       
+        alert.addAction(okButton)
+        self.presentViewController(alert, animated: true, completion: nil)
+    
     }
 }
