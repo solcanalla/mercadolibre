@@ -13,12 +13,7 @@ typealias ServiceResponse = (NSArray) -> Void
 
 class ApiManager : NSObject {
     
-    class var sharedInstance:ApiManager {
-        struct Singleton {
-            static let instance = ApiManager()
-        }
-        return Singleton.instance
-    }
+    static let sharedInstance = ApiManager()
 
     func getPaymentMethods(baseUrl: String, uri: String, publicKey: String, onCompletion: ServiceResponse) -> Void{
         
@@ -31,6 +26,7 @@ class ApiManager : NSObject {
                 
                 if((error) != nil){
                     print("API error")
+                    // TODO Error log also an alert maybe?
                     print(error)
                 }
                 
@@ -39,11 +35,10 @@ class ApiManager : NSObject {
                 if let jsonResponse = response.result.value {
                     if let pm  = jsonResponse as? NSArray{
                         paymentMethods = pm
-                    }
                     
-                    if (paymentMethods.count == 0){
-                        // Logeo error.
-                        print("No hay metodos de pagos asociados.")
+                    } else if let jR = jsonResponse as? NSDictionary{
+                        // TODO Error log also an alert maybe?
+                        print(jR.valueForKey("message"))
                     }
                 }
                 onCompletion(paymentMethods)

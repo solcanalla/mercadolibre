@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Alamofire
-
 
 class CreditCardViewController: UITableViewController {
     
@@ -25,11 +23,18 @@ class CreditCardViewController: UITableViewController {
         ApiManager.sharedInstance.getPaymentMethods(self.baseUrl,uri: self.uri,publicKey: self.publicKey){ paymentMethods in
             var givenCreditCards:Array<String> = []
             
+            if (paymentMethods.count == 0){
+                // TODO Warning log
+                print("There is no payment methods available.")
+            }
+            
+            //TODO this paymentMethods can be automatically parsed using some FWK but i think is not necessary in this case
             for paymentMethod in paymentMethods {
                 if paymentMethod["payment_type_id"] as! String == "credit_card" {
                     givenCreditCards.append(paymentMethod["name"] as! String)
                 }
             }
+            
             self.creditCards = givenCreditCards
             self.tableView.reloadData()
         }
