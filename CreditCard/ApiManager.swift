@@ -26,7 +26,7 @@ class ApiManager : NSObject {
                 
                 if((error) != nil){
                     print("API error")
-                    // TODO Error log also an alert maybe?
+                    // TODO It's necessary to do something when an error occurs?
                     print(error)
                 }
                 
@@ -37,7 +37,7 @@ class ApiManager : NSObject {
                         paymentMethods = pm
                     
                     } else if let jR = jsonResponse as? NSDictionary{
-                        // TODO Error log also an alert maybe?
+                        // TODO This can be another flow maybe?
                         print(jR.valueForKey("message"))
                     }
                 }

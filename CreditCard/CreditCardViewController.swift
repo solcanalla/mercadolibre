@@ -24,7 +24,6 @@ class CreditCardViewController: UITableViewController {
             var givenCreditCards:Array<String> = []
             
             if (paymentMethods.count == 0){
-                // TODO Warning log.
                 self.displayAlert()
             }
             
@@ -56,7 +55,7 @@ class CreditCardViewController: UITableViewController {
     }
     
     func displayAlert(){
-        let alert = UIAlertController(title: "Error", message: "There is no payment methods available.", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: "Error", message: "There is no credit cards available.", preferredStyle: UIAlertControllerStyle.Alert)
         let okButton = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil)
        
         alert.addAction(okButton)
